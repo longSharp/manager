@@ -20,6 +20,16 @@ app.use(bodyParser.json());
 //初始化passport
 app.use(passport.initialize());
 
+//解决跨域问题
+// app.all("*", function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "X-Requested-With");
+//   res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+//   res.header("X-Powered-By", " 3.2.1");
+//   res.header("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+//   next();
+// });
+
 //连接数据库
 mongoose
   .connect(db.mongoURI,{
