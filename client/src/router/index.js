@@ -2,10 +2,13 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 //懒加载引入组件
-const Index = ()=>import("../views/index.vue")
+const Index = ()=>import("../views/Index.vue")
 const Register = ()=>import("../views/Register.vue")
 const NotFound = ()=>import("../views/404.vue")
 const Login = ()=>import("../views/Login.vue")
+const Home = ()=>import("../views/Home.vue")
+const InfoShow = ()=>import("../views/InfoShow.vue")
+const FoundList = ()=>import("../views/FoundList.vue")
 
 Vue.use(VueRouter)
 
@@ -17,7 +20,28 @@ const routes = [
   {
     path:"/index",
     name:"index",
-    component:Index
+    component:Index,
+    children:[
+      {
+        path:'',
+        component:Home
+      },
+      {
+        path:'/home',
+        name:'home',
+        component:Home
+      },
+      {
+        path:"/infoshow",
+        name:"infoshow",
+        component:InfoShow
+      },
+      { 
+        path: '/foundlist', 
+        name: 'foundlist', 
+        component: FoundList 
+      }
+    ]
   },
   {
     path:"/register",

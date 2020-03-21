@@ -3,7 +3,7 @@
   <div class="login">
     <section class="form_container">
       <div class="manage_tip">
-        <span class="title">小敏在线后台管理系统</span>
+        <span class="title">敏锐在线后台管理系统</span>
         <el-form
           :model="loginUser"
           :rules="rules"
@@ -146,10 +146,10 @@ export default {
 
 .loginForm {
   margin-top: 20px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, .7);
   padding: 20px 40px 20px 20px;
   border-radius: 5px;
-  box-shadow: 0px 5px 10px #ccc;
+  box-shadow: 0px 0px 14px 8px #ccc;
 }
 
 .submit_btn {
